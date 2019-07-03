@@ -1,0 +1,52 @@
+﻿@using SECodingChallenge.Web.Models;
+
+@{
+    ViewBag.Title = "Visualize Sale's Data";
+Layout = "~/Views/Shared/_Layout.cshtml";
+var vehicleDetails = (IList<VehicleDetail>)Model;
+
+var noResultsFoundMessageFound = ViewBag.NoResultsFoundMessage;
+}
+
+<div class="container">
+    @if (vehicleDetails?.Count() > 0)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Number</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Dealership</th>
+                    <th scope="col">Vehicle</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var vehicleDetail in vehicleDetails)
+                {
+                    <tr>
+                        <td>
+                            @vehicleDetail.DealerNumber
+                        </td>
+                        <td>
+                            @vehicleDetail.CustomerName
+                        </td>
+                        <td>
+                            @vehicleDetail.DealershipName
+                        </td>
+                        <td>
+                            @vehicleDetail.Vehicle
+                        </td>
+                        <td>
+                            @string.Format("{0:C}", vehicleDetail.Price)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <h6>No results found</h6>
+    }
+</div>
