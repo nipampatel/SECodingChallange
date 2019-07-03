@@ -1,4 +1,5 @@
 ﻿using SECodingChallenge.Web.Helpers;
+using SECodingChallenge.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +37,8 @@ namespace SECodingChallenge.Web.Controllers
                 {
                     ViewBag.Errors = new[] { "Unable to read CSV file." };
                 }
-                var vehicleDetails = CSVHelper.ConvertToModel(csvData);
+                IList<VehicleDetail> vehicleDetails = CSVHelper.ConvertToModel(csvData);
+                ViewBag.MostSoldVehicle = vehicleDetails.GroupBy(vd => vd.Vehicle).GetHighesCountGroup();
                 return View("Results", vehicleDetails);
             }
             catch (Exception ex)

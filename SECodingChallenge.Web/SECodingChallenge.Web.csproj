@@ -126,6 +126,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\GroupingExtensions.cs" />
     <Compile Include="Helpers\HttpPostedFileBaseExtensions.cs" />
     <Compile Include="Helpers\CSVHelper.cs" />
     <Compile Include="Models\VehicleDetail.cs" />

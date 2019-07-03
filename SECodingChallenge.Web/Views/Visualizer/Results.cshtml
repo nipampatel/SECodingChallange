@@ -6,11 +6,13 @@ Layout = "~/Views/Shared/_Layout.cshtml";
 var vehicleDetails = (IList<VehicleDetail>)Model;
 
 var noResultsFoundMessageFound = ViewBag.NoResultsFoundMessage;
+var mostSoldVehicle  = ViewBag.MostSoldVehicle;
 }
 
 <div class="container">
     @if (vehicleDetails?.Count() > 0)
     {
+        <h4>Most sold vehicle : @mostSoldVehicle</h4>
         <table class="table">
             <thead>
                 <tr>
