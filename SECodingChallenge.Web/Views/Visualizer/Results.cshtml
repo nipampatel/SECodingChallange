@@ -19,28 +19,32 @@ var noResultsFoundMessageFound = ViewBag.NoResultsFoundMessage;
                     <th scope="col">Dealership</th>
                     <th scope="col">Vehicle</th>
                     <th scope="col">Price</th>
+                    <th scope="col">Date</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var vehicleDetail in vehicleDetails)
                 {
-                    <tr>
-                        <td>
-                            @vehicleDetail.DealerNumber
-                        </td>
-                        <td>
-                            @vehicleDetail.CustomerName
-                        </td>
-                        <td>
-                            @vehicleDetail.DealershipName
-                        </td>
-                        <td>
-                            @vehicleDetail.Vehicle
-                        </td>
-                        <td>
-                            @string.Format("{0:C}", vehicleDetail.Price)
-                        </td>
-                    </tr>
+                <tr>
+                    <td>
+                        @vehicleDetail.DealerNumber
+                    </td>
+                    <td>
+                        @vehicleDetail.CustomerName
+                    </td>
+                    <td>
+                        @vehicleDetail.DealershipName
+                    </td>
+                    <td>
+                        @vehicleDetail.Vehicle
+                    </td>
+                    <td>
+                        @string.Format("{0:C}", vehicleDetail.Price)
+                    </td>
+                    <td>
+                        @vehicleDetail.Date.ToString("MM/dd/yyyy")
+                    </td>
+                </tr>
                 }
             </tbody>
         </table>
