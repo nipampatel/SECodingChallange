@@ -10,3 +10,4 @@ after that should take you to sales data page. Records in .csv file not matching
 
 File more than 2MB will not be processed with this prototype.
 
+Solution can be opened with VS 2019 please.
